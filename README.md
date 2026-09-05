@@ -15,6 +15,8 @@
 A cross-platform GUI library for Rust focused on simplicity and type-safety.
 Inspired by [Elm].
 
+This is a fork of [iced-rs/iced](https://github.com/iced-rs/iced). The `iced_wgpu` renderer uses [sluggrs](https://github.com/folknor/sluggrs) for GPU vector text (the Slug algorithm) instead of [cryoglyph](https://github.com/iced-rs/cryoglyph). The integration comes from [folknor/iced `sluggrs`](https://github.com/folknor/iced/tree/sluggrs) and tracks the latest `sluggrs` `main`.
+
 <a href="https://github.com/squidowl/halloy">
   <img src="https://iced.rs/showcase/halloy.gif" width="460px">
 </a>
@@ -37,7 +39,7 @@ Inspired by [Elm].
 * Modular ecosystem split into reusable parts:
   * A [renderer-agnostic native runtime] enabling integration with existing systems
   * Two built-in renderers leveraging [`wgpu`] and [`tiny-skia`]
-    * [`iced_wgpu`] supporting Vulkan, Metal and DX12
+    * [`iced_wgpu`] supporting Vulkan, Metal and DX12, with [sluggrs] GPU vector text
     * [`iced_tiny_skia`] offering a software alternative as a fallback
   * A [windowing shell]
 
@@ -52,6 +54,7 @@ __Iced is currently experimental software.__ [Take a look at the roadmap] and
 [`wgpu`]: https://github.com/gfx-rs/wgpu
 [`tiny-skia`]: https://github.com/RazrFalcon/tiny-skia
 [`iced_wgpu`]: wgpu/
+[sluggrs]: https://github.com/folknor/sluggrs
 [`iced_tiny_skia`]: tiny_skia/
 [windowing shell]: winit/
 [Take a look at the roadmap]: ROADMAP.md
